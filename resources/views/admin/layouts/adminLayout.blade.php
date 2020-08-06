@@ -14,13 +14,6 @@
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/elegant-icons.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/nice-select.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
 </head>
 
 <body>
@@ -28,26 +21,11 @@
     {{-- <div id="preloder">
         <div class="loader"></div>
     </div> --}}
-
     <div id="app">
         <main class="py-4">
-            <!-- Humberger Begin -->
-            @include('partials.mobileNav')
-            <!-- Humberger End -->
-
-            <!-- Header Section Begin -->
-            <header class="header">
-                @include('partials.desktopNav')
-            </header>
-            <!-- Header Section End -->
             @yield('content')
-
-            {{-- footer section starts --}}
-            @include('partials.footer')
         </main>
     </div>
-
-
     <!-- Js Plugins -->
     <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
