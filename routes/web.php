@@ -30,4 +30,5 @@ Route::get('/delete_category/{category_id}', 'CategoryController@delete')->middl
 
 // Items Pages
 Route::get('/items', 'AdminController@items')->middleware('admin');
+Route::post('/items', 'ItemController@store')->middleware('admin');
 Route::get('/add_item', 'ItemController@show')->middleware('admin');

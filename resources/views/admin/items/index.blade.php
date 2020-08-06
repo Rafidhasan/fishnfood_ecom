@@ -30,10 +30,21 @@
                                     <ul class="mb-3">
                                         @foreach ($items as $item)
                                             <li class="mt-2">
-                                                {{ $item -> name }}
-                                                <a href="/edit_item/{{ $item->id }}" class="btn btn-primary btn-sm text-white">Edit</a>
-                                                <span class="ml-2"><a href="/delete_item/{{ $item->id }}" class="btn btn-danger btn-sm">Delete</a></span>
+                                                <div class="row">
+                                                    <div class="col-md-3">{{ $item -> name }}</div>
+                                                        <div class="col-md-6">
+                                                            <img src="{{ asset('uploads/images/' . $item->image) }}" height="100px" width="100px" alt="">
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                                <a href="/edit_item/{{ $item->id }}" type="button" class="btn btn-primary btn-sm text-white">Edit</a>
+                                                                <a href="/delete_item/{{ $item->id }}" type="button" class="btn btn-danger">Delete</a>
+                                                            </div>
+                                                      </div>
+                                                </div>
                                             </li>
+                                            <hr>
                                         @endforeach
                                         <a href="/add_item" class="btn btn-info mt-3">Add Item</a>
                                     </ul>

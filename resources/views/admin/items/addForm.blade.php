@@ -18,17 +18,30 @@
 
                             {{-- main section --}}
                             <div class="col-md-8">
-                                <form action="/admin" method="post" type="submit">
+                                <form action="/items" method="post" type="submit" enctype="multipart/form-data">
                                     @csrf
-                                    <div class="row">
-                                        <div class="col-md-10">
-                                            <input type="text" name="name" placeholder="Add Category" class="form-control">
-                                        </div>
-                                        <div class="col-md-2">
-                                            <input type="submit" value="submit" class="btn btn-primary">
-                                        </div>
+                                    <div class="form-group">
+                                      <label for="name">Item Name</label>
+                                      <input name="name" type="text" class="form-control" placeholder="Enter name">
                                     </div>
-                                </form>
+                                    <div class="form-group">
+                                        <label for="category">Chosse Category</label>
+                                        <select name="category_id" class="form-control">
+                                            @foreach ($categories as $category)
+                                                <option  name="category_id" value="{{ $category->id }}">{{ $category->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="image">Item Image</label>
+                                        <input name="image" type="file" class="form-control-file">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="amount">Amount</label>
+                                        <input name="amount" type="text" class="form-control" placeholder="Enter amount">
+                                      </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                  </form>
                             </div>
                         </div>
                     </div>

@@ -19,6 +19,7 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->mediumText('image');
             $table->float('amount');
+            $table->timestamps();
 
             $table->foreign('category_id')
                 ->references('id')

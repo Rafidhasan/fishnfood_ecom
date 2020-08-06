@@ -4,12 +4,20 @@
         <span>All departments</span>
     </div>
     <ul>
-        <li><a href="#">Featured</a></li>
-        <li><a href="#">Freshwater Fish</a></li>
-        <li><a href="#">Sea Food</a></li>
-        <li><a href="#">Our Special Cut Fishes</a></li>
-        <li><a href="#">Dried Fish</a></li>
-        <li><a href="#">Dairy & Spreads</a></li>
-        <li><a href="#">Grains</a></li>
+        @foreach ($categories as $category)
+            <li><a href="">{{$category->name}}</a></li>
+        @endforeach
+        <li class="dropdown">
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    All categories
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    @foreach ($dropdownCategories as $dropdownCategory)
+                        <a class="dropdown-item" href="#">{{ $dropdownCategory->name }}</a>
+                    @endforeach
+                </div>
+            </div>
+        </li>
     </ul>
 </div>
