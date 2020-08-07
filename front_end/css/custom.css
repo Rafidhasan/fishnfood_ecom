@@ -1,0 +1,20 @@
+.primary-link {
+    color: #262626;
+    text-decoration: none !important;
+}
+
+.primary-link:hover, .primary-link:focus {
+    color: #F47424;
+    text-decoration: underline;
+}
+
+.custom-brand {
+    padding: 8px 52px;
+    background-color: #db6a23;
+}
+
+.custom-button {
+    padding: auto;
+    background-color: #db6a23;
+}
+
